@@ -12,11 +12,13 @@ enum NetworkError: Error{
     case decodingError
     case domainError
     case urlError
+    
 }
 
 enum HttpMethod: String{
     case get = "GET"
     case post = "POST"
+    
 }
 
 struct Resource<T: Codable> {
