@@ -21,6 +21,8 @@
 		A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC6222804529700502F49 /* RepoListViewModel.swift */; };
 		A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC626280453F900502F49 /* ReposListCoordinator.swift */; };
 		A4FCC62B2804552600502F49 /* UIView.Controller+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC62A2804552600502F49 /* UIView.Controller+swift.swift */; };
+		A4FCC63328045BA900502F49 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC63228045BA900502F49 /* WebService.swift */; };
+		A4FCC63528045BC500502F49 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC63428045BC500502F49 /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		A4FCC6222804529700502F49 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		A4FCC626280453F900502F49 /* ReposListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListCoordinator.swift; sourceTree = "<group>"; };
 		A4FCC62A2804552600502F49 /* UIView.Controller+swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView.Controller+swift.swift"; sourceTree = "<group>"; };
+		A4FCC63228045BA900502F49 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A4FCC63428045BC500502F49 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		A4FCC5E428044ECE00502F49 /* StarredRepos */ = {
 			isa = PBXGroup;
 			children = (
+				A4FCC63128045B8800502F49 /* Services */,
 				A4FCC6292804550100502F49 /* Extensions */,
 				A4FCC6212804527000502F49 /* ViewModels */,
 				A4FCC61C2804524300502F49 /* Views */,
@@ -188,6 +193,15 @@
 				A4FCC62A2804552600502F49 /* UIView.Controller+swift.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4FCC63128045B8800502F49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC63228045BA900502F49 /* WebService.swift */,
+				A4FCC63428045BC500502F49 /* Resource.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +336,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FCC63528045BC500502F49 /* Resource.swift in Sources */,
 				A4FCC61F2804525F00502F49 /* RepoCell.swift in Sources */,
 				A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */,
+				A4FCC63328045BA900502F49 /* WebService.swift in Sources */,
 				A4FCC61B2804523000502F49 /* AppCoordinator.swift in Sources */,
 				A4FCC62B2804552600502F49 /* UIView.Controller+swift.swift in Sources */,
 				A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */,
