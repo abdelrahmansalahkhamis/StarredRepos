@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45B4DCB2804973A00DDC66B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45B4DCA2804973A00DDC66B /* Resource.swift */; };
 		A4FCC5E628044ECE00502F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC5E528044ECE00502F49 /* AppDelegate.swift */; };
 		A4FCC5ED28044ECE00502F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC5EB28044ECE00502F49 /* Main.storyboard */; };
 		A4FCC5EF28044ED000502F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC5EE28044ED000502F49 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A45B4DCA2804973A00DDC66B /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		A4FCC5E228044ECE00502F49 /* StarredRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarredRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FCC5E528044ECE00502F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FCC5EC28044ECE00502F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		A4FCC64628047D6200502F49 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A45B4DCA2804973A00DDC66B /* Resource.swift */,
 				A4FCC64728047D8000502F49 /* WebService.swift */,
 			);
 			path = Services;
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45B4DCB2804973A00DDC66B /* Resource.swift in Sources */,
 				A4FCC61F2804525F00502F49 /* RepoCell.swift in Sources */,
 				A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */,
 				A4FCC64828047D8000502F49 /* WebService.swift in Sources */,
