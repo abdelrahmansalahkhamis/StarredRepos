@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		A4FCC5E628044ECE00502F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC5E528044ECE00502F49 /* AppDelegate.swift */; };
 		A4FCC5E828044ECE00502F49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC5E728044ECE00502F49 /* SceneDelegate.swift */; };
-		A4FCC5EA28044ECE00502F49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC5E928044ECE00502F49 /* ViewController.swift */; };
 		A4FCC5ED28044ECE00502F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC5EB28044ECE00502F49 /* Main.storyboard */; };
 		A4FCC5EF28044ED000502F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC5EE28044ED000502F49 /* Assets.xcassets */; };
 		A4FCC5F228044ED000502F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC5F028044ED000502F49 /* LaunchScreen.storyboard */; };
 		A4FCC5FD28044ED000502F49 /* StarredReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC5FC28044ED000502F49 /* StarredReposTests.swift */; };
 		A4FCC60728044ED000502F49 /* StarredReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC60628044ED000502F49 /* StarredReposUITests.swift */; };
 		A4FCC60928044ED000502F49 /* StarredReposUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC60828044ED000502F49 /* StarredReposUITestsLaunchTests.swift */; };
+		A4FCC6182804512D00502F49 /* ReposListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC6172804512D00502F49 /* ReposListVC.swift */; };
+		A4FCC61B2804523000502F49 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC61A2804523000502F49 /* AppCoordinator.swift */; };
+		A4FCC61F2804525F00502F49 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC61D2804525F00502F49 /* RepoCell.swift */; };
+		A4FCC6202804525F00502F49 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC61E2804525F00502F49 /* RepoCell.xib */; };
+		A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC6222804529700502F49 /* RepoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 		A4FCC5E228044ECE00502F49 /* StarredRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarredRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FCC5E528044ECE00502F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FCC5E728044ECE00502F49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4FCC5E928044ECE00502F49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4FCC5EC28044ECE00502F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4FCC5EE28044ED000502F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4FCC5F128044ED000502F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		A4FCC60228044ED000502F49 /* StarredReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarredReposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FCC60628044ED000502F49 /* StarredReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredReposUITests.swift; sourceTree = "<group>"; };
 		A4FCC60828044ED000502F49 /* StarredReposUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredReposUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4FCC6172804512D00502F49 /* ReposListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListVC.swift; sourceTree = "<group>"; };
+		A4FCC61A2804523000502F49 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A4FCC61D2804525F00502F49 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		A4FCC61E2804525F00502F49 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
+		A4FCC6222804529700502F49 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,11 @@
 		A4FCC5E428044ECE00502F49 /* StarredRepos */ = {
 			isa = PBXGroup;
 			children = (
-				A4FCC5E528044ECE00502F49 /* AppDelegate.swift */,
-				A4FCC5E728044ECE00502F49 /* SceneDelegate.swift */,
-				A4FCC5E928044ECE00502F49 /* ViewController.swift */,
+				A4FCC6212804527000502F49 /* ViewModels */,
+				A4FCC61C2804524300502F49 /* Views */,
+				A4FCC6192804521000502F49 /* Coordinators */,
+				A4FCC616280450F200502F49 /* ViewControllers */,
+				A4FCC615280450D700502F49 /* Core */,
 				A4FCC5EB28044ECE00502F49 /* Main.storyboard */,
 				A4FCC5EE28044ED000502F49 /* Assets.xcassets */,
 				A4FCC5F028044ED000502F49 /* LaunchScreen.storyboard */,
@@ -125,6 +135,48 @@
 				A4FCC60828044ED000502F49 /* StarredReposUITestsLaunchTests.swift */,
 			);
 			path = StarredReposUITests;
+			sourceTree = "<group>";
+		};
+		A4FCC615280450D700502F49 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC5E528044ECE00502F49 /* AppDelegate.swift */,
+				A4FCC5E728044ECE00502F49 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A4FCC616280450F200502F49 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC6172804512D00502F49 /* ReposListVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A4FCC6192804521000502F49 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC61A2804523000502F49 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A4FCC61C2804524300502F49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC61D2804525F00502F49 /* RepoCell.swift */,
+				A4FCC61E2804525F00502F49 /* RepoCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4FCC6212804527000502F49 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC6222804529700502F49 /* RepoListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +286,7 @@
 				A4FCC5F228044ED000502F49 /* LaunchScreen.storyboard in Resources */,
 				A4FCC5EF28044ED000502F49 /* Assets.xcassets in Resources */,
 				A4FCC5ED28044ECE00502F49 /* Main.storyboard in Resources */,
+				A4FCC6202804525F00502F49 /* RepoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4FCC5EA28044ECE00502F49 /* ViewController.swift in Sources */,
+				A4FCC61F2804525F00502F49 /* RepoCell.swift in Sources */,
+				A4FCC61B2804523000502F49 /* AppCoordinator.swift in Sources */,
+				A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */,
+				A4FCC6182804512D00502F49 /* ReposListVC.swift in Sources */,
 				A4FCC5E628044ECE00502F49 /* AppDelegate.swift in Sources */,
 				A4FCC5E828044ECE00502F49 /* SceneDelegate.swift in Sources */,
 			);
