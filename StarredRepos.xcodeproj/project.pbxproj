@@ -22,7 +22,7 @@
 		A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC626280453F900502F49 /* ReposListCoordinator.swift */; };
 		A4FCC62B2804552600502F49 /* UIView.Controller+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC62A2804552600502F49 /* UIView.Controller+swift.swift */; };
 		A4FCC64828047D8000502F49 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC64728047D8000502F49 /* WebService.swift */; };
-		A4FCC64A28047D8F00502F49 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC64928047D8F00502F49 /* Resource.swift */; };
+		A4FCC64C2804820800502F49 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC64B2804820800502F49 /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		A4FCC626280453F900502F49 /* ReposListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListCoordinator.swift; sourceTree = "<group>"; };
 		A4FCC62A2804552600502F49 /* UIView.Controller+swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView.Controller+swift.swift"; sourceTree = "<group>"; };
 		A4FCC64728047D8000502F49 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		A4FCC64928047D8F00502F49 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		A4FCC64B2804820800502F49 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FCC64728047D8000502F49 /* WebService.swift */,
-				A4FCC64928047D8F00502F49 /* Resource.swift */,
+				A4FCC64B2804820800502F49 /* Resource.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4FCC64A28047D8F00502F49 /* Resource.swift in Sources */,
+				A4FCC64C2804820800502F49 /* Resource.swift in Sources */,
 				A4FCC61F2804525F00502F49 /* RepoCell.swift in Sources */,
 				A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */,
 				A4FCC64828047D8000502F49 /* WebService.swift in Sources */,
