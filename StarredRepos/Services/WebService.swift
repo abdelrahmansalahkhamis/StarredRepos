@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-
 class WebService{
     static func load<T> (resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void){
         
