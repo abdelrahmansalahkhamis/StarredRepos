@@ -8,11 +8,19 @@
 import UIKit
 
 class ReposListVC: UITableViewController {
+    
+    var viewModel =  ReposListViewModel()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "RepoCell", bundle: nil), forCellReuseIdentifier: "RepoCell")
         
+        viewModel.onUpdate = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.loadRepos()
     }
 
     // MARK: - Table view data source
@@ -24,16 +32,23 @@ class ReposListVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 17
+        return viewModel.numberOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
 
-        cell.textLabel?.text = "\(indexPath.row)"
-        cell.textLabel?.textAlignment = .center
-        return cell
+//        cell.textLabel?.text = "\(indexPath.row)"
+//        cell.textLabel?.textAlignment = .center
+        switch  viewModel.cell(at: indexPath) {
+            case .repo(let repoCellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! RepoCell
+                cell.update(with: repoCellViewModel)
+                return cell
+        }
+        
+        //return cell
     }
     
 
@@ -41,4 +56,8 @@ class ReposListVC: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 }
