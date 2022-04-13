@@ -22,17 +22,19 @@ struct Repo: Codable{
     let name: String
     let fullName: String
     let owner: Owner
-    //let itemDescription: String
+    //let description: String
     let stargazersCount: Int
     let openIssuesCount: Int
+    let createdAt: String
     enum CodingKeys: String, CodingKey {
         case name
         case fullName = "full_name"
         case owner
-        //case itemDescription = "description"
+        //case description = "description"
         case stargazersCount = "stargazers_count"
 
         case openIssuesCount = "open_issues_count"
+        case createdAt = "created_at"
     }
 
 }
@@ -40,7 +42,6 @@ struct Repo: Codable{
 struct Owner: Codable {
 
     let avatarURL: String
-
 
     enum CodingKeys: String, CodingKey {
 
@@ -112,15 +113,15 @@ struct Owner: Codable {
 
 extension ReposList{
     // https://api.github.com/search/repositories?q=created:>2022-04-10&sort=stars&order=desc&page=2
-    static var allRepos: Resource<ReposList>? = {
+    static var allRepos: Resource<ReposList> = {
         
-        if let url = URL(string: "https://api.github.com/search/repositories?q=created:2020-01-01&sort=stars&order=desc&page=1") {
+        guard let url = URL(string: URLs.allRepos) else{
+            fatalError("incorrect url")
             //print("error url")
-            return Resource<ReposList>(url: url)
-        }else{
-            print("error url")
         }
-        return nil
+            print("url is :- \(url)")
+            return Resource<ReposList>(url: url)
+        
     }()
 }
 

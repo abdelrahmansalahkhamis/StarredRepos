@@ -47,6 +47,17 @@ class RepoCellViewModel{
         return self.repo.openIssuesCount
     }
     
+    var timeInterval: Int{
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        //dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: self.repo.createdAt)
+        let elapseTimeInSeconds = Date().timeIntervalSince(date ?? Date())
+        // yyyy-MM-dd'T'HH:mm:ssZ
+        // 2020-01-01T12:34:32Z
+        return Int((elapseTimeInSeconds / (60.0 * 60.0 * 24.0)))
+    }
+    
     func loadAvatar(_ completion: @escaping((UIImage?) -> Void)){
         
 //        guard let avatarUrl = userAvatar else{

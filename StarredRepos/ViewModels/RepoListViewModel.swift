@@ -40,7 +40,7 @@ class ReposListViewModel{
 
 extension ReposListViewModel{
     func loadRepos(){
-        repoService.load(resource: ReposList.allRepos!) { result in
+        repoService.load(resource: ReposList.allRepos) { result in
             switch result{
             case .success(let repos):
                 self.cells = repos.items.map{
