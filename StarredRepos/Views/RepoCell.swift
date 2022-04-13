@@ -42,6 +42,7 @@ class RepoCell: UITableViewCell {
         repoDescription.text = viewModel.itemDescription
         repoStars.text = "\(viewModel.stargazersCount)"
         repoIssues.text = "\(viewModel.openIssuesCount)"
+        timeIntervalByOwner.text = "\(viewModel.timeInterval)"
         viewModel.loadAvatar { image in
             self.userAvatar.image = image
         }
