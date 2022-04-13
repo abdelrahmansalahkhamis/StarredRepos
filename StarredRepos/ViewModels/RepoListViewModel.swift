@@ -14,7 +14,7 @@ class ReposVM{
 }
 
 class ReposListViewModel{
-    let title = "Events"
+    let title = "Starred Repos"
     var onUpdate = {}
     enum Cell{
         case repo(RepoCellViewModel)
