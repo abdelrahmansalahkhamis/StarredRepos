@@ -14,12 +14,7 @@ class ReposListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        formatter.locale = Locale(identifier: "fr_FR")
-        let stringDate = formatter.string(from: (Date() - 30))
-        //let date = formatter.date(from: stringDate)
-        print("Date() - 30 is :- \(stringDate)")
+        title = viewModel.title
         tableView.register(UINib(nibName: "RepoCell", bundle: nil), forCellReuseIdentifier: "RepoCell")
         
         viewModel.onUpdate = { [weak self] in

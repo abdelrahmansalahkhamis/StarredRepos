@@ -30,6 +30,11 @@ class RepoCellViewModel{
         //return "--------"
         return self.repo.owner.avatarURL
     }
+    
+    var username: String{
+        //return "--------"
+        return self.repo.owner.login
+    }
 
     var itemDescription:String{
         return "--------"
