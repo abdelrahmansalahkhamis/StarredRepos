@@ -10,7 +10,6 @@ import UIKit
 class ReposListVC: UITableViewController {
     
     var repoListViewModel =  ReposListViewModel()
-    let activityIndicator = UIActivityIndicatorView(style: .large)
     var totalItems = 0
     var currentPage = 1
     
@@ -18,8 +17,6 @@ class ReposListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(activityIndicator)
-        activityIndicator.center = view.center
         title = repoListViewModel.title
         tableView.register(UINib(nibName: "LoadinngCell", bundle: nil), forCellReuseIdentifier: "LoadinngCell")
         tableView.register(UINib(nibName: "RepoCell", bundle: nil), forCellReuseIdentifier: "RepoCell")
@@ -28,13 +25,11 @@ class ReposListVC: UITableViewController {
     }
 
     func loadData(){
-        activityIndicator.startAnimating()
         repoListViewModel.loadRepos(currentPage)
         repoListViewModel.onUpdate = { [weak self] in
             self?.totalItems = self?.repoListViewModel.cells.count ?? 0
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
-                self?.activityIndicator.stopAnimating()
             }
             
         }
@@ -61,7 +56,6 @@ class ReposListVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
         if indexPath.section == 0{
             let vm = repoListViewModel.cells[indexPath.row]
 
@@ -73,8 +67,6 @@ class ReposListVC: UITableViewController {
             cell.activityIndicator.startAnimating()
             return cell
         }
-        
-        //return cell
     }
     
 
