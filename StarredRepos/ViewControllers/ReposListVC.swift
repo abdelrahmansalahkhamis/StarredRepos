@@ -9,21 +9,32 @@ import UIKit
 
 class ReposListVC: UITableViewController {
     
-    var viewModel =  ReposListViewModel()
-
+    var repoListViewModel =  ReposListViewModel()
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    var totalItems = 0
+    var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel.title
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        title = repoListViewModel.title
         tableView.register(UINib(nibName: "RepoCell", bundle: nil), forCellReuseIdentifier: "RepoCell")
+        loadData()
         
-        viewModel.onUpdate = { [weak self] in
-            self?.tableView.reloadData()
-        }
-        
-        viewModel.loadRepos()
     }
 
+    func loadData(){
+        activityIndicator.startAnimating()
+        repoListViewModel.loadRepos(currentPage)
+        repoListViewModel.onUpdate = { [weak self] in
+            self?.totalItems = self?.repoListViewModel.cells.count ?? 0
+            self?.tableView.reloadData()
+            self?.activityIndicator.stopAnimating()
+        }
+        
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,22 +44,17 @@ class ReposListVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel.numberOfRows()
+        return repoListViewModel.numberOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
+        let vm = repoListViewModel.cells[indexPath.row]
 
-//        cell.textLabel?.text = "\(indexPath.row)"
-//        cell.textLabel?.textAlignment = .center
-        switch  viewModel.cell(at: indexPath) {
-            case .repo(let repoCellViewModel):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! RepoCell
-                cell.update(with: repoCellViewModel)
-                return cell
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! RepoCell
+            cell.update(with: vm)
+            return cell
         //return cell
     }
     
@@ -60,5 +66,22 @@ class ReposListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == repoListViewModel.cells.count - 1{
+            if repoListViewModel.cells.count <= totalItems {
+                print("Call the next page")
+                self.currentPage += 1
+                loadData()
+                print("currentPage is :- \(currentPage)")
+            }else{
+                print("repoListViewModel.cells.count < indexPath.row but repoListViewModel.cells.count > totalItems ,,, totalItems are :- \(totalItems)")
+            }
+            
+        }
+        else{
+            print("repoListViewModel.cells.count > indexPath.row ,,, totalItems are :- \(totalItems)")
+        }
     }
 }

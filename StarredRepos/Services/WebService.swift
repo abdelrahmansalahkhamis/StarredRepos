@@ -26,13 +26,9 @@ class WebService: RepoServiceProtocol{
                 print(error?.localizedDescription)
                 return
             }
-            
-            print("data loaded are => \(data)")
             do{
                 let result = try? JSONDecoder().decode(T.self, from: data)
-                print("results are :- \(result)")
                 if let result = result {
-                    print("result are :- \(result)")
                     DispatchQueue.main.async {
                         completion(.success(result))
                         //print("yes")

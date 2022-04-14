@@ -16,11 +16,9 @@ class ReposVM{
 class ReposListViewModel{
     let title = "Starred Repos"
     var onUpdate = {}
-    enum Cell{
-        case repo(RepoCellViewModel)
-    }
+
     
-    private(set) var cells: [Cell] = []
+    private(set) var cells: [RepoCellViewModel] = []
     
     private let repoService: RepoServiceProtocol
     
@@ -33,32 +31,29 @@ class ReposListViewModel{
     }
     
     
-    func cell(at indexPath: IndexPath) -> Cell{
+    func cell(at indexPath: IndexPath) -> RepoCellViewModel{
         return cells[indexPath.row]
     }
+    
+    
 }
 
 extension ReposListViewModel{
-    func loadRepos(){
-        repoService.load(resource: ReposList.allRepos) { result in
+    func loadRepos(_ pageNumber: Int){
+        repoService.load(resource: ReposList.getAllRepos(pageNumber: pageNumber)) { result in
             switch result{
             case .success(let repos):
-                self.cells = repos.items.map{
+                self.cells += repos.items.map{
                     let reposCellViewModel = RepoCellViewModel($0)
                     
                     
-                    return .repo(reposCellViewModel)
+                    return reposCellViewModel
                 }
                 self.onUpdate()
             case .failure(let error):
                 print("error is => \(error)")
-//                activityIndicator.stopAnimating()
             }
         }
         
     }
-    
-//    func sportViewModel(at index: Int) -> ReposVM{
-//        return self.cells[index]
-//    }
 }
