@@ -24,10 +24,9 @@ struct Repo: Codable{
     enum CodingKeys: String, CodingKey {
         case name
         case fullName = "full_name"
-        case owner
-        //case description = "description"
+        //case description
         case stargazersCount = "stargazers_count"
-
+        case owner
         case openIssuesCount = "open_issues_count"
         case createdAt = "created_at"
     }
