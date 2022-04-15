@@ -39,22 +39,13 @@ class RepoCell: UITableViewCell {
     }
     func update(with viewModel: RepoCellViewModel){
         repoName.text = viewModel.name
-        repoDescription.text = viewModel.itemDescription
+        //repoDescription.text = viewModel.itemDescription
         repoStars.text = "\(viewModel.stargazersCount)"
         repoIssues.text = "\(viewModel.openIssuesCount)"
         timeIntervalByOwner.text = "submitted " + "\(viewModel.timeInterval) " + "days age by " + viewModel.username
         viewModel.loadAvatar { image in
             self.userAvatar.image = image
         }
-//        if let timeRemainingViewModel = viewModel.timeRemainingViewModel{
-//            timeRemainingStackView.update(with: timeRemainingViewModel)
-//        }
-//
-//        dateLabel.text = viewModel.dateText
-//        eventNameLabel.text = viewModel.eventName
-//        viewModel.loadImage { (image) in
-//            self.backgroundImageView.image = image
-//        }
         
     }
 }
