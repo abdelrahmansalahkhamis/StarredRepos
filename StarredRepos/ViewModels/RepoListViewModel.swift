@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class ReposVM{
     let repoItem: Repo? = nil
 }
@@ -34,8 +32,6 @@ class ReposListViewModel{
     func cell(at indexPath: IndexPath) -> RepoCellViewModel{
         return cells[indexPath.row]
     }
-    
-    
 }
 
 extension ReposListViewModel{

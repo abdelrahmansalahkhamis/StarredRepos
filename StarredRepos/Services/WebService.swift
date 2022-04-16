@@ -19,7 +19,7 @@ class WebService: RepoServiceProtocol{
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.addValue("en-US,en;q=0.5", forHTTPHeaderField: "Accept-Language")
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(.urlError))

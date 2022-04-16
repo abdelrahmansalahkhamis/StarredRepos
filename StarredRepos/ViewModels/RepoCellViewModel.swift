@@ -16,47 +16,33 @@ class RepoCellViewModel{
         self.repo = repo
     }
     var name:String{
-        get{
-            return self.repo.name
-        }
+        return self.repo.name ?? ""
     }
-
-    var fullname: String{
-        //return "--------"
-        return self.repo.fullName
-    }
-
     var userAvatar: String{
-        //return "--------"
-        return self.repo.owner.avatarURL
+        return self.repo.owner.avatarURL ?? ""
     }
     
     var username: String{
-        //return "--------"
-        return self.repo.owner.login
+        return self.repo.owner.login ?? ""
     }
 
     var itemDescription:String{
-        return "--------"
-        //return self.repo.itemDescription ?? ""
+        return self.repo.description ?? ""
     }
 
     var stargazersCount:Int{
-        //return 10
-        return self.repo.stargazersCount
+        return self.repo.stargazersCount ?? 0
     }
 
 
     var openIssuesCount: Int{
-        //return 15
-        return self.repo.openIssuesCount
+        return self.repo.openIssuesCount ?? 0
     }
     
     var timeInterval: Int{
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        //dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: self.repo.createdAt)
+        let date = dateFormatter.date(from: self.repo.craetedAt ?? "")
         let elapseTimeInSeconds = Date().timeIntervalSince(date ?? Date())
         // yyyy-MM-dd'T'HH:mm:ssZ
         // 2020-01-01T12:34:32Z
@@ -64,16 +50,9 @@ class RepoCellViewModel{
     }
     
     func loadAvatar(_ completion: @escaping((UIImage?) -> Void)){
-        
-//        guard let avatarUrl = userAvatar else{
-//            completion(nil)
-//            return
-//        }
-        let url = URL(string: userAvatar)!
 
-            // Fetch Image Data
+        let url = URL(string: userAvatar)!
             if let data = try? Data(contentsOf: url) {
-                // Create Image and Update Image View
                 completion(UIImage(data: data))
             }
     }
