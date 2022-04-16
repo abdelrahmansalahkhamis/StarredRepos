@@ -7,10 +7,6 @@
 
 import Foundation
 
-class ReposVM{
-    let repoItem: Repo? = nil
-}
-
 class ReposListViewModel{
     let title = "Starred Repos"
     var onUpdate = {}
@@ -35,19 +31,20 @@ class ReposListViewModel{
 }
 
 extension ReposListViewModel{
-    func loadRepos(_ pageNumber: Int){
+    func loadRepos(_ pageNumber: Int, completion: @escaping([RepoCellViewModel]?, Error?) -> Void){
         repoService.load(resource: ReposList.getAllRepos(pageNumber: pageNumber)) { result in
             switch result{
             case .success(let repos):
                 self.cells += repos.items.map{
                     let reposCellViewModel = RepoCellViewModel($0)
-                    
-                    
                     return reposCellViewModel
+                    
                 }
-                self.onUpdate()
+                completion(self.cells, nil)
+                //self.onUpdate()
             case .failure(let error):
                 print("error is => \(error)")
+                completion(nil, error)
             }
         }
         
