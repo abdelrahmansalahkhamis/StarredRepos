@@ -11,10 +11,11 @@ class RepoCell: UITableViewCell {
 
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var repoName: UILabel!
-    @IBOutlet weak var repoDescription: UILabel!
+    //@IBOutlet weak var repoDescription: UILabel!
     @IBOutlet weak var repoStars: UILabel!
     @IBOutlet weak var repoIssues: UILabel!
     @IBOutlet weak var timeIntervalByOwner: UILabel!
+    @IBOutlet weak var repoDescription: UITextView!
     
     @IBOutlet weak var starsView: UIView!
     @IBOutlet weak var issuesView: UIView!
@@ -34,12 +35,10 @@ class RepoCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-        // asd
     }
     func update(with viewModel: RepoCellViewModel){
         repoName.text = viewModel.name
-        //repoDescription.text = viewModel.itemDescription
+        repoDescription.text = viewModel.itemDescription
         repoStars.text = "\(viewModel.stargazersCount)"
         repoIssues.text = "\(viewModel.openIssuesCount)"
         timeIntervalByOwner.text = "submitted " + "\(viewModel.timeInterval) " + "days age by " + viewModel.username

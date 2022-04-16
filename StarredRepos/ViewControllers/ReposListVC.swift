@@ -31,10 +31,7 @@ class ReposListVC: UITableViewController {
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
-            
         }
-        
-        
     }
     // MARK: - Table view data source
     
@@ -87,17 +84,10 @@ class ReposListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == repoListViewModel.cells.count - 1{
             if repoListViewModel.cells.count <= totalItems {
-                print("Call the next page")
                 self.currentPage += 1
                 loadData()
                 print("currentPage is :- \(currentPage)")
-            }else{
-                print("repoListViewModel.cells.count < indexPath.row but repoListViewModel.cells.count > totalItems ,,, totalItems are :- \(totalItems)")
             }
-            
-        }
-        else{
-            print("repoListViewModel.cells.count > indexPath.row ,,, totalItems are :- \(totalItems)")
         }
     }
 }
