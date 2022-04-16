@@ -19,11 +19,6 @@ class StarredReposTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
     func testPerformanceExample() throws {
@@ -32,5 +27,66 @@ class StarredReposTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func testReposLoaded(){
+        
+        let expectaion = self.expectation(description: "repos returned from api")
+        //var repoCells: [RepoCellViewModel]? = nil
+        let reposListViewModel = ReposListViewModel()
+        reposListViewModel.loadRepos(1) { cells,error  in
+            XCTAssertNotNil(cells)
+            XCTAssertNil(error)
+            expectaion.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testReposNotLoaded(){
+        
+        let expectaion = self.expectation(description: "repos returned from api")
+        //var repoCells: [RepoCellViewModel]? = nil
+        let reposListViewModel = ReposListViewModel()
+        reposListViewModel.loadRepos(10000) { cells,error  in
+            XCTAssertNil(cells)
+            XCTAssertNotNil(error)
+            expectaion.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadReposCorrectData(){
+        
+        let expectaion = self.expectation(description: "repos returned from api with correct data")
+        var repoCells: [RepoCellViewModel]? = nil
+        let reposListViewModel = ReposListViewModel()
+        reposListViewModel.loadRepos(1) { cells, error in
+            repoCells = cells
+            XCTAssertNotNil(repoCells)
+            XCTAssertNil(error)
+            XCTAssertEqual(repoCells?[0].name, "run")
+            XCTAssertEqual(repoCells?[0].username, "The-Run-Philosophy-Organization")
+            expectaion.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadReposWrongData(){
+        
+        let expectaion = self.expectation(description: "repos returned from api with wrong data")
+        var repoCells: [RepoCellViewModel]? = nil
+        let reposListViewModel = ReposListViewModel()
+        reposListViewModel.loadRepos(1) { cells, error in
+            repoCells = cells
+            XCTAssertNotNil(repoCells)
+            XCTAssertNil(error)
+            XCTAssertNotEqual(repoCells?[1].name, "run")
+            XCTAssertNotEqual(repoCells?[1].username, "The-Run-Philosophy-Organization")
+            expectaion.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }

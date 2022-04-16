@@ -25,11 +25,13 @@ class ReposListVC: UITableViewController {
     }
 
     func loadData(){
-        repoListViewModel.loadRepos(currentPage)
-        repoListViewModel.onUpdate = { [weak self] in
-            self?.totalItems = self?.repoListViewModel.cells.count ?? 0
+        repoListViewModel.loadRepos(currentPage) { cells, error  in
+            guard error == nil else{
+                return
+            }
+            self.totalItems = cells?.count ?? 0
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }

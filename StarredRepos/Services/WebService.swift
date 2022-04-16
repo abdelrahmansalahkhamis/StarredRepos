@@ -29,6 +29,7 @@ class WebService: RepoServiceProtocol{
             do{
                 let result = try? JSONDecoder().decode(T.self, from: data)
                 if let result = result {
+                    print("result :- \(result)")
                     DispatchQueue.main.async {
                         completion(.success(result))
                         //print("yes")
