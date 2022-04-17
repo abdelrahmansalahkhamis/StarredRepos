@@ -1,20 +1,18 @@
 //
-//  WebService.swift
-//  StarredRepos
+//  MockWebService.swift
+//  StarredReposTests
 //
-//  Created by abdrahman on 11/04/2022.
+//  Created by abdrahman on 17/04/2022.
 //
 
 import Foundation
+@testable import StarredRepos
 
-protocol RepoServiceProtocol {
-    func load<T>(resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void)
-}
-
-
-class WebService: RepoServiceProtocol{
-    func load<T> (resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void){
-        
+class MockWebService: RepoServiceProtocol{
+    
+    
+    func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable, T : Encodable {
+   
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body
@@ -29,13 +27,15 @@ class WebService: RepoServiceProtocol{
             do{
                 let result = try? JSONDecoder().decode(T.self, from: data)
                 if let result = result {
-                    //print("result :- \(result)")
                     completion(.success(result))
+                }else{
+                    completion(.failure(.decodingError))
                 }
             }catch(let error){
                 completion(.failure(.decodingError))
-                print("error is ==> \(error)")
             }
         }.resume()
+        
     }
+    
 }
