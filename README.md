@@ -19,11 +19,11 @@
 
 ### Screenshots
 
-![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6130.PNG?raw=true)
+<img src="https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6130.PNG?raw=true" height="400" alt="Screenshot"/>
 
-![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6131.PNG?raw=true)
+<img src="https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6131.PNG?raw=true" height="400" alt="Screenshot"/>
 
-![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6133.PNG?raw=true)
+<img src="https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6133.PNG?raw=true" height="400" alt="Screenshot"/>
 
-![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6134.PNG?raw=true)
+<img src="https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6134.PNG?raw=true" height="400" alt="Screenshot"/>
 
