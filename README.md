@@ -15,3 +15,5 @@
 
 * For the endpoint API, I created a function called getLast30DaysDate to return the date of 30 days age from current date and inject in the url
 
+* Another feature is that this app support dark theme as well as light theme
+
