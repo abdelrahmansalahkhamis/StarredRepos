@@ -42,9 +42,17 @@ class RepoCell: UITableViewCell {
         repoStars.text = "\(viewModel.stargazersCount)"
         repoIssues.text = "\(viewModel.openIssuesCount)"
         timeIntervalByOwner.text = "submitted " + "\(viewModel.timeInterval) " + "days age by " + viewModel.username
-        viewModel.loadAvatar { image in
+        loadAvatar(userAvatar: viewModel.userAvatar) { image in
             self.userAvatar.image = image
         }
         
+    }
+    
+    func loadAvatar(userAvatar: String, _ completion: @escaping((UIImage?) -> Void)){
+
+        let url = URL(string: userAvatar)!
+            if let data = try? Data(contentsOf: url) {
+                completion(UIImage(data: data))
+            }
     }
 }

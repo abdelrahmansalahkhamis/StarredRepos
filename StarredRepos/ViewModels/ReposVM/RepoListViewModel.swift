@@ -9,7 +9,6 @@ import Foundation
 
 class ReposListViewModel{
     let title = "Starred Repos"
-    var onUpdate = {}
 
     
     private(set) var cells: [RepoCellViewModel] = []
@@ -38,15 +37,12 @@ extension ReposListViewModel{
                 self.cells += repos.items.map{
                     let reposCellViewModel = RepoCellViewModel($0)
                     return reposCellViewModel
-                    
                 }
                 completion(self.cells, nil)
-                //self.onUpdate()
             case .failure(let error):
-                print("error is => \(error)")
                 completion(nil, error)
             }
         }
-        
+
     }
 }

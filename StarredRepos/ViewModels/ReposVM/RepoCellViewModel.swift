@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 
 class RepoCellViewModel{
@@ -48,13 +47,4 @@ class RepoCellViewModel{
         // 2020-01-01T12:34:32Z
         return Int((elapseTimeInSeconds / (60.0 * 60.0 * 24.0)))
     }
-    
-    func loadAvatar(_ completion: @escaping((UIImage?) -> Void)){
-
-        let url = URL(string: userAvatar)!
-            if let data = try? Data(contentsOf: url) {
-                completion(UIImage(data: data))
-            }
-    }
-    
 }
