@@ -29,7 +29,7 @@
 		A4FCC6202804525F00502F49 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FCC61E2804525F00502F49 /* RepoCell.xib */; };
 		A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC6222804529700502F49 /* RepoListViewModel.swift */; };
 		A4FCC627280453F900502F49 /* ReposListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC626280453F900502F49 /* ReposListCoordinator.swift */; };
-		A4FCC62B2804552600502F49 /* UIView.Controller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC62A2804552600502F49 /* UIView.Controller+.swift */; };
+		A4FCC62B2804552600502F49 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC62A2804552600502F49 /* UIViewController+.swift */; };
 		A4FCC64828047D8000502F49 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCC64728047D8000502F49 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,7 @@
 		A4FCC61E2804525F00502F49 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
 		A4FCC6222804529700502F49 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		A4FCC626280453F900502F49 /* ReposListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListCoordinator.swift; sourceTree = "<group>"; };
-		A4FCC62A2804552600502F49 /* UIView.Controller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView.Controller+.swift"; sourceTree = "<group>"; };
+		A4FCC62A2804552600502F49 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		A4FCC64728047D8000502F49 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,7 +269,7 @@
 		A4FCC6292804550100502F49 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A4FCC62A2804552600502F49 /* UIView.Controller+.swift */,
+				A4FCC62A2804552600502F49 /* UIViewController+.swift */,
 				A462487328073CC20043A992 /* Date+.swift */,
 			);
 			path = Extensions;
@@ -425,7 +425,7 @@
 				A45B4DD02804C0A300DDC66B /* RepoModel.swift in Sources */,
 				A4FCC64828047D8000502F49 /* WebService.swift in Sources */,
 				A4FCC61B2804523000502F49 /* AppCoordinator.swift in Sources */,
-				A4FCC62B2804552600502F49 /* UIView.Controller+.swift in Sources */,
+				A4FCC62B2804552600502F49 /* UIViewController+.swift in Sources */,
 				A45B4DD52804FAC100DDC66B /* URLs.swift in Sources */,
 				A45B4DD22804D7CC00DDC66B /* RepoCellViewModel.swift in Sources */,
 				A4FCC6232804529700502F49 /* RepoListViewModel.swift in Sources */,
