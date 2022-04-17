@@ -157,6 +157,14 @@
 			path = RepoMdoel;
 			sourceTree = "<group>";
 		};
+		A4B102C8280CB2B1000193F4 /* ReposListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCC6172804512D00502F49 /* ReposListVC.swift */,
+			);
+			path = ReposListScreen;
+			sourceTree = "<group>";
+		};
 		A4FCC5D928044ECE00502F49 = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +235,7 @@
 		A4FCC616280450F200502F49 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A4FCC6172804512D00502F49 /* ReposListVC.swift */,
+				A4B102C8280CB2B1000193F4 /* ReposListScreen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
