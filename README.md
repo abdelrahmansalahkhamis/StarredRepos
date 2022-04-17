@@ -17,13 +17,13 @@
 
 * Another feature is that this app support dark theme as well as light theme
 
-### StarredRepos
+### Screenshots
 
-https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6130.PNG?raw=true
+![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6130.PNG?raw=true)
 
-https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6131.PNG?raw=true
+![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6131.PNG?raw=true)
 
-https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6133.PNG?raw=true
+![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6133.PNG?raw=true)
 
-https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6134.PNG?raw=true
+![Screenshot](https://github.com/abdelrahmansalahkhamis/StarredRepos/blob/main/Screenshots/IMG_6134.PNG?raw=true)
 
