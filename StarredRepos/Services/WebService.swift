@@ -8,13 +8,15 @@
 import Foundation
 
 protocol RepoServiceProtocol {
-    func load<T>(resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void)
+    func load<T>(resource: Resource<T>?, completion: @escaping(Result<T, NetworkError>) -> Void)
 }
 
 
 class WebService: RepoServiceProtocol{
-    func load<T> (resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void){
-        
+    func load<T> (resource: Resource<T>?, completion: @escaping(Result<T, NetworkError>) -> Void){
+        guard let resource = resource else {
+            return
+        }
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body
@@ -29,12 +31,10 @@ class WebService: RepoServiceProtocol{
             do{
                 let result = try? JSONDecoder().decode(T.self, from: data)
                 if let result = result {
-                    //print("result :- \(result)")
                     completion(.success(result))
                 }
             }catch(let error){
                 completion(.failure(.decodingError))
-                print("error is ==> \(error)")
             }
         }.resume()
     }

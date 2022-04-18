@@ -11,8 +11,10 @@ import Foundation
 class MockWebService: RepoServiceProtocol{
     
     
-    func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable, T : Encodable {
-   
+    func load<T>(resource: Resource<T>?, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable, T : Encodable {
+        guard let resource = resource else {
+            return
+        }
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body
@@ -21,7 +23,6 @@ class MockWebService: RepoServiceProtocol{
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(.urlError))
-                print(error?.localizedDescription)
                 return
             }
             do{

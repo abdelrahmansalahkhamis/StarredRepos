@@ -25,7 +25,7 @@ class RepoListViewModelTest: XCTestCase {
     
     func test_loadSuccess(){
         let expectaion = self.expectation(description: "repos returned successfuly from api")
-        viewModel.loadRepos(1) { cells, error in
+        viewModel.loadRepos(0) { cells, error in
             XCTAssertNotNil(cells)
             XCTAssertNil(error)
             expectaion.fulfill()
@@ -35,7 +35,7 @@ class RepoListViewModelTest: XCTestCase {
     
     func test_loadFailed(){
         let expectaion = self.expectation(description: "repos failed returned from api")
-        viewModel.loadRepos(1000) { cells, error in
+        viewModel.loadRepos(10000) { cells, error in
             XCTAssertNil(cells)
             XCTAssertNotNil(error)
             expectaion.fulfill()
