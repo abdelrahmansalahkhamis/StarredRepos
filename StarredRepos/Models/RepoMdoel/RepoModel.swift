@@ -42,12 +42,11 @@ struct Owner:Codable{
 
 
 extension ReposList{
-    // https://api.github.com/search/repositories?q=created:>2022-04-10&sort=stars&order=desc&page=2
-    static func getAllRepos(pageNumber: Int) -> Resource<ReposList>{
-        guard let url = URL(string: URLs.allRepos + "\(pageNumber)") else{
-            fatalError("incorrect url")
+    static func getAllRepos(pageNumber: Int) -> Resource<ReposList>?{
+        guard let url = URLs.constructReposURL(page: pageNumber)else{
+            //fatalError("incorrect url")
+            return nil
         }
         return Resource<ReposList>(url: url)
     }
-
 }
